@@ -1,0 +1,235 @@
+#element1,
+#element2 {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1 !important;
+}
+
+.navbar-brand-img {
+    max-width: 100%;
+    max-height: 4rem;
+}
+
+.page-header {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: 50%;
+}
+
+/** Social Button CSS **/
+
+.share-btn {
+    display: inline-block;
+    color: #ffffff;
+    border: none;
+    padding: 0 8px;
+    min-width: 38px;
+    line-height: 38px;
+    outline: none;
+    text-align: center;
+    font-size: 1.1em;
+    margin: 0 0.2em;
+    border-radius: 50%;
+}
+
+.share-btn:focus,
+.share-btn:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.share-btn:active {
+    color: #e2e2e2;
+}
+
+.share-btn.twitter {
+    background: #141414;
+}
+
+.share-btn.facebook {
+    background: #3B5998;
+}
+
+.share-btn.reddit {
+    background: #ff5700;
+}
+
+.share-btn.hackernews {
+    background: #ff6600;
+}
+
+.share-btn.linkedin {
+    background: #4875B4;
+}
+
+.share-btn.email {
+    background: #444444;
+}
+
+hr.horizontal {
+    margin: 1rem, 0;
+    background-color: transparent;
+}
+
+hr.horizontal.light {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0));
+}
+
+hr.horizontal.dark {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 767.98px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    hr.horizontal {
+        background-color: transparent;
+    }
+
+    hr.horizontal:not(.dark) {
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    }
+
+    hr.horizontal.vertical {
+        transform: rotate(90deg);
+    }
+
+    hr.horizontal.dark {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    }
+}
+
+.text-body {
+    color: #67748e !important;
+}
+
+.card {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-border-width: 2;
+    --bs-card-border-color: rgba(0, 79, 118, 0.2);
+    --bs-card-border-radius: 1rem;
+    --bs-card-box-shadow: 0 20px 27px 0 rgba(71, 71, 71, 0.1);
+    --bs-card-inner-border-radius: 1rem;
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: #fbfbfb;
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: #fff;
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: 1px solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+    box-shadow: var(--bs-box-shadow-sm);
+}
+
+.card>hr {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    color: var(--bs-card-color);
+}
+
+.card-title {
+    margin-bottom: var(--bs-card-title-spacer-y);
+}
+
+.card-subtitle {
+    margin-top: calc(-0.5 * var(--bs-card-title-spacer-y));
+    margin-bottom: 0;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.card-header {
+    padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+    margin-bottom: 0;
+    color: var(--bs-card-cap-color);
+    background-color: var(--bs-card-cap-bg);
+    border-bottom: 1px solid var(--bs-card-border-color);
+}
+
+.card-header:first-child {
+    border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
+}
+
+.card-footer {
+    padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+    color: var(--bs-card-cap-color);
+    background-color: var(--bs-card-cap-bg);
+    border-top: var(--bs-card-border-width) solid var(--bs-card-border-color);
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius);
+}
+
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.text-gradient.text-primary {
+    background-image: linear-gradient(310deg, #7928CA, #FF0080);
+}
+
+.text-gradient.text-info {
+    background-image: linear-gradient(310deg, #2152FF, #00f7ff);
+}
+#21D4FD
+.text-gradient.text-success {
+    background-image: linear-gradient(310deg, #17AD37, #C1E823);
+}
+
+.text-gradient.text-warning {
+    background-image: linear-gradient(310deg, #F53939, #FBCF33);
+}
+
+.text-gradient.text-danger {
+    background-image: linear-gradient(310deg, #D60808, #FF6690);
+}
+
+.text-gradient.text-dark {
+    background-image: linear-gradient(310deg, #141727, #3A416F);
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+#applicantGraph, #recruiterGraph  {
+    height: 400px;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+}
