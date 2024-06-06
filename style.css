@@ -228,8 +228,14 @@ hr.horizontal.dark {
     font-size: 1.5rem;
 }
 
-#applicantGraph, #recruiterGraph  {
+#applicantGraph  {
     height: 400px;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+}
+
+#recruiterGraph  {
+    height: 300px;
     border: 1px solid lightgray;
     border-radius: 25px;
 }
