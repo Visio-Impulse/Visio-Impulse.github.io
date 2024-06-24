@@ -47,17 +47,63 @@
             </div>
 
             <div class="container">
-                <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center align-items-center">
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="animate__animated animate__zoomIn animate__delay-4s" id="applicantGraph"></div>
+
+                <!-- Youtube videos -->
+                <div
+                    class="row justify-content-center align-items-center mt-2 animate__animated animate__zoomIn animate__delay-4s">
+                    <h4 class="text-gradient text-primary">Introduction Videos</h4>
+                    <hr class="horizontal dark">
+                    <div class="col-xl-3 col-lg-3 col-md-12 mx-2 px-2">
+                        <a href="https://www.youtube.com/watch?v=2p3mt11NqK0" target="_blank">
+                            <figure>
+                                <img width=300 style="border-radius: 5%;"
+                                    src="https://img.youtube.com/vi/2p3mt11NqK0/0.jpg">
+                                <figcaption>Part 1: Interview + CV Extraction</figcaption>
+                            </figure>
+                        </a>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4">
-                        <div class="animate__animated animate__zoomIn animate__delay-4s" id="recruiterGraph"></div>
+                    <div class="col-xl-3 col-lg-3 col-md-12 mx-2 px-2" style="border-radius: 15%;">
+                        <a href="https://www.youtube.com/watch?v=KBViZz0Cy5w" target="_blank">
+                            <figure>
+                                <img width=300 style="border-radius: 5%;"
+                                    src="https://img.youtube.com/vi/KBViZz0Cy5w/0.jpg">
+                                <figcaption>Part 2: Challenges + Job Matching</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-12 mx-2 px-2" style="border-radius: 15%;">
+                        <a href="https://www.youtube.com/watch?v=z3GAklOeA-I" target="_blank">
+                            <figure>
+                                <img width=300 style="border-radius: 5%;"
+                                    src="https://img.youtube.com/vi/z3GAklOeA-I/0.jpg">
+                                <figcaption>Part 3: Course Generation</figcaption>
+                            </figure>
+                        </a>
                     </div>
                 </div>
-                <div class="row mt-lg-n10 mt-md-n11 mt-n10">
+
+                <!-- Graphs -->
+                <div
+                    class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center align-items-center animate__animated animate__zoomIn animate__delay-5s">
+                    <h4 class="text-gradient text-primary">Process Graphs</h4>
+                    <hr class="horizontal dark">
+                    <div class="col-xl-3 col-lg-3 col-md-3">
+                        <div id="applicantGraph"></div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                        <div id="applicantGraph2"></div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3">
+                        <div id="recruiterGraph"></div>
+                    </div>
+                </div>
+
+                <!-- Comming soon -->
+                <div class="row mt-lg-n10 mt-md-n11 mt-n10 animate__animated animate__zoomIn animate__delay-5s">
+                    <h4 class="text-gradient text-primary">Additional Info</h4>
+                    <hr class="horizontal dark">
                     <div class="col-xl-5 col-lg-5 col-md-5 mx-auto">
-                        <div class="card z-index-0 animate__animated animate__zoomIn animate__delay-5s mt-5">
+                        <div class="card z-index-0">
 
                             <div class="card-header text-center py-2">
                                 <h5 class="text-2xl text-gradient text-primary">Comming Soon ...</h5>
@@ -159,7 +205,7 @@
 
             setTimeout(function () {
                 document.getElementById('element2').classList.add('fade-in');
-            }, 4000); // 4 seconds after loading the page
+            }, 3500); // 4 seconds after loading the page
         });
     </script>
 
@@ -170,8 +216,6 @@
             { id: 2, label: 'Interview', color: '#c5ffea', font: { size: 18 } },
             { id: 3, label: 'CV', color: '#c5ffea', font: { size: 18 } },
             { id: 4, label: 'Matching\nJobs', color: '#FFC4D9', font: { size: 18 } },
-            { id: 5, label: 'Coding\nChallenges', color: '#c5ffea', font: { size: 18 } },
-            { id: 6, label: 'Mini-Courses', color: '#c5ffea', font: { size: 18 } }
         ]);
 
         // Define edges
@@ -179,12 +223,49 @@
             { from: 1, to: 2 },
             { from: 2, to: 3 },
             { from: 3, to: 4 },
-            { from: 1, to: 5 },
-            { from: 1, to: 6 },
         ]);
 
         // Create a network
         var container = document.getElementById('applicantGraph');
+        var data = {
+            nodes: nodes,
+            edges: edges
+        };
+        var options = {
+            nodes: {
+                shape: 'dot',
+                size: 17
+            },
+            edges: {
+                arrows: 'to'
+            }
+        };
+        var network = new vis.Network(container, data, options);
+    </script>
+
+    <script type="text/javascript">
+        // Define nodes
+        var nodes = new vis.DataSet([
+            { id: 1, label: 'Applicant', shape: 'box', color: '#B6E6FC', font: { size: 18 } },
+            { id: 2, label: 'Coding\nChallenges', color: '#c5ffea', font: { size: 18 } },
+            { id: 3, label: 'Mini-Courses', color: '#c5ffea', font: { size: 18 } },
+            { id: 4, label: 'Evaluate', color: '#c5ffea', font: { size: 18 } },
+            { id: 5, label: 'Update CV', color: '#c5ffea', font: { size: 18 } },
+            { id: 6, label: 'Matching\nJobs', color: '#FFC4D9', font: { size: 18 } },
+        ]);
+
+        // Define edges
+        var edges = new vis.DataSet([
+            { from: 1, to: 2 },
+            { from: 1, to: 3 },
+            { from: 2, to: 4 },
+            { from: 3, to: 4 },
+            { from: 4, to: 5 },
+            { from: 5, to: 6 },
+        ]);
+
+        // Create a network
+        var container = document.getElementById('applicantGraph2');
         var data = {
             nodes: nodes,
             edges: edges
